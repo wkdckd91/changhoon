@@ -1,4 +1,4 @@
-package org.example.web.vo;
+package org.example.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

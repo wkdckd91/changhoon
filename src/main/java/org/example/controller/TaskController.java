@@ -1,13 +1,13 @@
-package org.example.web;
+package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.constants.TaskStatus;
 import org.example.model.Task;
 import org.example.service.TaskService;
-import org.example.web.vo.ResultResponse;
-import org.example.web.vo.TaskRequest;
-import org.example.web.vo.TaskStatusRequest;
+import org.example.dto.ResultResponse;
+import org.example.dto.TaskRequest;
+import org.example.dto.TaskStatusRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +29,11 @@ public class TaskController {
      * @return 추가된 할 일
      */
     @PostMapping
-    public ResponseEntity<Task> createTask(@RequestBody TaskRequest req) {
-        var result = this.taskService.add(req.getTitle(), req.getDescription(), req.getDueDate());
+    public ResponseEntity<?> createTask(@RequestBody TaskRequest req) {
+        if (req.getDueDate() == null) {
+            return ResponseEntity.badRequest().body("Due date cannot be null");
+        }
+        Task result = this.taskService.add(req.getTitle(), req.getDescription(), req.getDueDate());
         return ResponseEntity.ok(result);
     }
 

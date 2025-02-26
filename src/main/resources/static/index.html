@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #task-form {
+            margin-bottom: 20px;
+        }
+        #task-list {
+            width: 100%;
+            max-width: 600px;
+        }
+        li {
+            list-style: none;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<form id="task-form">
+    <input type="text" id="title" placeholder="Title">
+    <input type="text" id="description" placeholder="Description">
+    <button type="submit">Add Task</button>
+</form>
+<ul id="task-list"></ul>
+<script src="app.js"></script>
+</body>
+</html>
