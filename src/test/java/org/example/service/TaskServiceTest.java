@@ -1,8 +1,8 @@
 package org.example.service;
 
 import org.example.constants.TaskStatus;
-import org.example.persist.TaskRepository;
-import org.example.persist.entity.TaskEntity;
+import org.example.repository.TaskRepository;
+import org.example.entity.TaskEntity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

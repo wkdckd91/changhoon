@@ -1,4 +1,4 @@
-package org.example.web.vo;
+package org.example.dto;
 
 import lombok.Getter;
 import lombok.ToString;

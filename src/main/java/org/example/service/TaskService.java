@@ -5,8 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
 import org.example.constants.TaskStatus;
 import org.example.model.Task;
-import org.example.persist.TaskRepository;
-import org.example.persist.entity.TaskEntity;
+import org.example.repository.TaskRepository;
+import org.example.entity.TaskEntity;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
@@ -105,7 +105,7 @@ public class TaskService {
                 .title(e.getTitle())
                 .description(e.getDescription())
                 .status(e.getStatus())
-                .dueDate(e.getDueDate().toString())
+                .dueDate(e.getDueDate().toLocalDate())
                 .createdAt(e.getCreatedAt().toLocalDateTime())
                 .updatedAt(e.getUpdatedAt().toLocalDateTime())
                 .build();

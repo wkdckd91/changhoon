@@ -1,7 +1,7 @@
-package org.example.persist;
+package org.example.repository;
 
 import org.example.constants.TaskStatus;
-import org.example.persist.entity.TaskEntity;
+import org.example.entity.TaskEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Date;
